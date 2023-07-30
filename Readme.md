@@ -47,8 +47,8 @@ docker-compose build
 ### Running locally
 1. Clone the repository to your local machine
 ```sh
-git clone https://github.com/angelinaaziz/cpx-monitor.git
-cd cpx-monitor
+git clone https://github.com/angelinaaziz/cpx-monitor_cli_tool.git
+cd cpx-monitor_cli_tool
 ```
 
 2. Install the required dependencies
