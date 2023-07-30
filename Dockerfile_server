@@ -1,0 +1,14 @@
+# Use the official Python image as the base image
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the server script into the container
+COPY cpx_server.py /app/
+
+# Expose the port on which the server will run
+EXPOSE 8080
+
+# Run the CPX server
+CMD ["python", "cpx_server.py", "--port", "8080"]

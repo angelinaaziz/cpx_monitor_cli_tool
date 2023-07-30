@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  cpx_server:
+    build:
+      context: .
+      dockerfile: Dockerfile_server
+    ports:
+      - "8080:8080"
+    command: python cpx_server.py 8080  # Pass the port as an argument
+
+  cpx_monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile_monitor
+    depends_on:
+      - cpx_server
+    stdin_open: true  # Enable interaction with the container's STDIN
+    tty: true         # Allocate a pseudo-TTY for the container

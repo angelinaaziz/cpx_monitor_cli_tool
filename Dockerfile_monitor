@@ -1,0 +1,14 @@
+# Use the official Python image as the base image
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the monitor script and dependencies into the container
+COPY cpx_monitor.py requirements.txt /app/
+
+# Install the required Python packages from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the CPX Monitor
+CMD ["python", "cpx_monitor.py", "--host", "cpx_server", "--port", "8080"]
